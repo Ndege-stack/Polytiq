@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intelligence Blog | The Polytiq</title>
+    <link rel="icon" href="../polytiq-icon-light.png">
+    <meta name="description" content="Commercial intelligence insights on climate, geopolitics, and development shifts shaping African markets.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        img { max-width: 100%; height: auto; display: block; margin: 0 auto 24px auto; }
+
+        a { color: inherit; }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-bottom: 32px;
+            opacity: 0.55;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .back-link:hover { opacity: 1; }
+
+        h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .page-subtitle { font-size: 1rem; opacity: 0.55; margin-bottom: 40px; }
+
+        /* ── Post Cards ── */
+        #blog-list { display: flex; flex-direction: column; gap: 0; }
+
+        .post-card {
+            display: block;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+        .post-card:first-child { border-top: 1px solid rgba(0,0,0,0.08); }
+        .post-card:hover { opacity: 0.65; }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.78rem;
+            opacity: 0.5;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .post-tag {
+            background: rgba(0,0,0,0.06);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+        }
+
+        .post-title {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .post-excerpt {
+            font-size: 0.92rem;
+            opacity: 0.6;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── States ── */
+        .loading-state, .error-state, .empty-state {
+            padding: 48px 0;
+            font-size: 0.92rem;
+            opacity: 0.45;
+        }
+
+        .skeleton {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .skeleton-line {
+            background: rgba(0,0,0,0.07);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        footer p { font-size: 0.7rem; line-height: 1.4; text-align: center; }
+
+        /* Custom cursor */
+        .cursor {
+            position: fixed; top: 0; left: 0;
+            width: 28px; height: 28px;
+            border: 1.5px solid rgba(0,0,0,0.55);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease, height 0.25s ease;
+            z-index: 9999;
+        }
+        @media (max-width: 1024px) { .cursor { display: none; } }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            body { padding: 36px 18px; }
+            h1 { font-size: 2rem; }
+        }
+        @media screen and (max-width: 480px) {
+            body { padding: 24px 12px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <img src="../polytiq-logo-horizontal.png" alt="Polytiq Logo">
+        <hr>
+
+        <a class="back-link" href="../">← The Polytiq</a>
+
+        <h1>Intelligence Blog</h1>
+        <p class="page-subtitle">Insights on climate, geopolitics, and development shifts in African markets — sorted latest to oldest.</p>
+
+        <div id="blog-list">
+            <!-- Skeleton loaders -->
+            <div class="skeleton">
+                <div class="skeleton-line" style="width:30%;height:12px;"></div>
+                <div class="skeleton-line" style="width:70%;height:18px;margin-top:12px;"></div>
+                <div class="skeleton-line" style="width:90%;height:14px;"></div>
+            </div>
+            <div class="skeleton">
+                <div class="skeleton-line" style="width:25%;height:12px;"></div>
+                <div class="skeleton-line" style="width:60%;height:18px;margin-top:12px;"></div>
+                <div class="skeleton-line" style="width:85%;height:14px;"></div>
+            </div>
+            <div class="skeleton">
+                <div class="skeleton-line" style="width:35%;height:12px;"></div>
+                <div class="skeleton-line" style="width:75%;height:18px;margin-top:12px;"></div>
+                <div class="skeleton-line" style="width:80%;height:14px;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 64px;">
+        <hr>
+        <p>The Polytiq is an independent strategic intelligence initiative. Operated by <a href="https://www.sqn.one">SQN (Sine Qua Non)</a>.</p>
+    </footer>
+
+    <div class="cursor"></div>
+    <script src="blog.js"></script>
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (!isTouchDevice) {
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+        }
+    </script>
+</body>
+</html>
