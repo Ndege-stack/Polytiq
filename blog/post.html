@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading… | The Polytiq</title>
+    <link rel="icon" href="../polytiq-icon-light.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            line-height: 1.6;
+        }
+
+        img.logo { max-width: 100%; height: auto; display: block; margin: 0 auto 24px auto; }
+
+        a { color: inherit; }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            opacity: 0.5;
+            text-decoration: none;
+        }
+        .back-link:hover { opacity: 1; }
+
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            font-size: 0.78rem;
+            opacity: 0.5;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .post-tag {
+            background: rgba(0,0,0,0.06);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+        }
+
+        #post-title {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 0 0 36px 0;
+        }
+
+        #post-cover {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            display: none;
+        }
+
+        /* Notion block rendering */
+        #post-body { font-size: 1rem; }
+        #post-body p { margin-bottom: 16px; }
+        #post-body h2 { font-size: 1.4rem; margin: 40px 0 12px; }
+        #post-body h3 { font-size: 1.15rem; margin: 32px 0 10px; }
+        #post-body ul, #post-body ol { padding-left: 20px; margin-bottom: 16px; }
+        #post-body li { margin-bottom: 6px; }
+        #post-body blockquote {
+            border-left: 3px solid rgba(0,0,0,0.15);
+            margin: 24px 0;
+            padding: 4px 0 4px 20px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        #post-body code {
+            background: rgba(0,0,0,0.05);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        #post-body pre {
+            background: rgba(0,0,0,0.04);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+        #post-body pre code { background: none; padding: 0; }
+        #post-body hr { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 36px 0; }
+
+        /* Skeleton */
+        .skeleton-line {
+            background: rgba(0,0,0,0.07);
+            border-radius: 4px;
+            margin-bottom: 12px;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+        footer p { font-size: 0.7rem; line-height: 1.4; text-align: center; }
+
+        .cursor {
+            position: fixed; top: 0; left: 0;
+            width: 28px; height: 28px;
+            border: 1.5px solid rgba(0,0,0,0.55);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease, height 0.25s ease;
+            z-index: 9999;
+        }
+        @media (max-width: 1024px) { .cursor { display: none; } }
+
+        @media screen and (max-width: 768px) {
+            body { padding: 36px 18px; }
+            #post-title { font-size: 1.7rem; }
+        }
+        @media screen and (max-width: 480px) {
+            body { padding: 24px 12px; }
+            #post-title { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <img class="logo" src="../polytiq-logo-horizontal.png" alt="Polytiq Logo">
+        <hr>
+
+        <a class="back-link" href="../blog/">← Intelligence Blog</a>
+
+        <div id="post-meta" class="post-meta"></div>
+        <h1 id="post-title">
+            <!-- skeleton -->
+            <div class="skeleton-line" style="width:85%;height:28px;margin-bottom:10px;"></div>
+            <div class="skeleton-line" style="width:60%;height:28px;"></div>
+        </h1>
+
+        <img id="post-cover" alt="Cover image">
+
+        <div id="post-body">
+            <div class="skeleton-line" style="width:100%;height:14px;"></div>
+            <div class="skeleton-line" style="width:95%;height:14px;"></div>
+            <div class="skeleton-line" style="width:88%;height:14px;"></div>
+            <div class="skeleton-line" style="width:70%;height:14px;margin-bottom:28px;"></div>
+            <div class="skeleton-line" style="width:100%;height:14px;"></div>
+            <div class="skeleton-line" style="width:92%;height:14px;"></div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 64px;">
+        <hr>
+        <p>The Polytiq is an independent strategic intelligence initiative. Operated by <a href="https://www.sqn.one">SQN (Sine Qua Non)</a>.</p>
+    </footer>
+
+    <div class="cursor"></div>
+    <script src="blog.js"></script>
+    <script>
+        const cursor = document.querySelector('.cursor');
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (!isTouchDevice) {
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+        }
+    </script>
+</body>
+</html>
