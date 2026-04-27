@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/blog.js": {
+      "runtime": "@vercel/node@3"
+    }
+  }
+}
